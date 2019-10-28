@@ -1,6 +1,6 @@
 # wunderlist-backend
 
-Deployed on Heroku with a PosgresSQL database https://wunderlist-02.herokuapp.com/
+Deployed on Heroku with a PosgresSQL database https://wunderlist20.herokuapp.com/
 
 Link to the landing page (React app is connected to login) https://wunderlist20.github.io/landing-avni/index.html
 
@@ -83,7 +83,7 @@ If you would like to make a request to the todos or users endpoint, a valid JSON
 | firstName  | String | <p>Users firstName </p>                                    |
 | lastName   | String | <p>Users lastName </p>
 
-**POST** `https://wunderlist-02.herokuapp.com/api/auth/register` will create a new user and send back a token. Username, password, firstName, lastName are required fields.
+**POST** `https://wunderlist20.herokuapp.com/api/auth/register` will create a new user and send back a token. Username, password, firstName, lastName are required fields.
 
 ## Examples
 
@@ -136,7 +136,7 @@ ERROR 500
 
 
 
-**POST** `https://wunderlist-02.herokuapp.com/api/auth/login` will log the user in, and send back a token. Username and password required.
+**POST** `https://wunderlist20.herokuapp.com/api/auth/login` will log the user in, and send back a token. Username and password required.
 
 
 ### Examples
@@ -180,25 +180,37 @@ ERROR 401
 ## Todos 
 ### (protected route, requires login/token)
 
-**GET** `https://wunderlist-02.herokuapp.com/api/todos/` will return an array of todos.
+**GET** `https://wunderlist20.herokuapp.com/api/todos/` will return an array of todos.
 
-**GET** `https://wunderlist-02.herokuapp.com/api/todos/:id` will return an object corresponding to the todo at that ID.
+**GET** `https://wunderlist20.herokuapp.com/api/todos/:id` will return an object corresponding to the todo at that ID.
 
-**POST** `https://wunderlist-02.herokuapp.com/api/todos/` will add a new todo, and return the created object. title, task and setDate are required fields. user_id, notes, and completed are optional fields.
+**POST** `https://wunderlist20.herokuapp.com/api/todos/` will add a new todo, and return the created object. title, task and setDate are required fields. user_id, notes, and completed are optional fields.
 
-**DEL** `https://wunderlist-02.herokuapp.com/api/todos/:id` will delete the todo at this ID, and return the deleted object.
+**DEL** `https://wunderlist20.herokuapp.com/api/todos/:id` will delete the todo at this ID, and return the deleted object.
 
-**PUT** `https://wunderlist-02.herokuapp.com/api/todos/:id` will edit the todo at this ID, and return the edited object.
+**PUT** `https://wunderlist20.herokuapp.com/api/todos/:id` will edit the todo at this ID, and return the edited object.
 
+## Tasks 
+### (protected route, requires login/token)
+
+**GET** `https://wunderlist20.herokuapp.com/api/tasks/` will return an array of tasks.
+
+**GET** `https://wunderlist20.herokuapp.com/api/tasks/:id` will return an object corresponding to the todo at that ID.
+
+**POST** `https://wunderlist20.herokuapp.com/api/tasks/` will add a new task, and return the created object. title, task and setDate are required fields. user_id, notes, and completed are optional fields.
+
+**DEL** `https://wunderlist20.herokuapp.com/api/tasks/:id` will delete the task at this ID, and return the deleted object.
+
+**PUT** `https://wunderlist20.herokuapp.com/api/tasks/:id` will edit the task at this ID, and return the edited object.
 
 ## Users 
 ### (protected route, requires login/token)
 
-GET  `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to view their specific profile by id
+GET  `https://wunderlist20.herokuapp.com/api/users/:id` allows a user to view their specific profile by id
 
-PUT  `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to edit their specific profile
+PUT  `https://wunderlist20.herokuapp.com/api/users/:id` allows a user to edit their specific profile
 
-DELETE `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to delete their specific profile
+DELETE `https://wunderlist20.herokuapp.com/api/users/:id` allows a user to delete their specific profile
 
 
 **If you are running the project locally, every endpoint here is the same, but the heroku URL is replaced with `http://localhost:4000/`. For example, `GET` `http://localhost:4000/api/todos` will return an array of todos.**
