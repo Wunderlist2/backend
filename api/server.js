@@ -17,7 +17,7 @@ server.use(cors());
 server.use('/api/todos', authorization, todosRouter); //todos list array 
 server.use('/api/auth', authRouter); //register and login (receive token)
 server.use('/api/users', authorization, usersRouter); //user profile (view, edit, delete)
-server.use('/api/tasks',  tasksRouter);
+server.use('/api/tasks', authorization, tasksRouter);
 
 //server test
 server.get('/', async (req, res) => {
